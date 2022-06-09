@@ -256,6 +256,7 @@ func (client *PortainerAsyncClient) executeAsyncRequest(payload AsyncRequest, po
 
 	req.Header.Set(agent.HTTPEdgeIdentifierHeaderName, client.edgeID)
 	req.Header.Set(agent.HTTPResponseAgentPlatform, strconv.Itoa(int(client.agentPlatformIdentifier)))
+	req.Header.Set(agent.HTTPResponseAgentHeaderName, agent.Version)
 
 	hostname, err := os.GetHostName()
 	if err != nil {
